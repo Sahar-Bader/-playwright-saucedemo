@@ -1,32 +1,46 @@
 Playwright SauceDemo Automation Project
 
 Overview
-This project is an automation testing project for the SauceDemo website using Playwright and JavaScript.
-The goal of the project is to demonstrate a clear and structured approach to building automated tests.
-
-Key Features
-The project is built using the Page Object Model approach, which separates the test logic from the page structure.
-It also uses a data driven approach to run multiple scenarios with different users and inputs.
-Tests are configured to run on multiple browsers including Chromium, Firefox and WebKit.
-The tests include validations of page titles, URLs and error messages.
-
-Test Coverage
-The project includes a full login test suite.
-Positive scenarios cover successful login with different user types.
-Negative scenarios cover locked users, invalid credentials and empty fields, including validation of error messages.
-
-There is also an end to end test that covers the full purchase flow.
-This includes adding products to the cart, completing the checkout process and verifying the order completion screen.
+This project is an automation suite for the SauceDemo website built with Playwright and JavaScript.
+The goal was to create a clean, maintainable test structure using Page Object Model and external test data.
 
 Project Structure
-The tests folder contains all test files.
-The pages folder contains the page objects with locators and actions.
-The data folder contains test data such as URLs, users and constants.
+tests  
+Contains the test files such as login and sanity tests.
+
+pages  
+Each page in the application is represented as a class with its locators and actions.
+
+data  
+Holds all reusable data such as URLs, users, error messages and negative test scenarios.
+
+What was implemented
+Login tests  
+Positive scenarios for multiple user types.  
+Negative scenarios using data driven approach from a separate file.
+
+End to End sanity test  
+Full purchase flow from login to order completion.
+
+Approach
+Used Page Object Model to separate UI elements from test logic.  
+Moved test data outside of test files to improve readability and reuse.  
+Used loops to run multiple scenarios without duplicating code.
 
 Technologies
-The project is built using JavaScript, Playwright and Node.js.
+JavaScript  
+Playwright  
+Node.js
 
-How to Run
-Install dependencies using npm install
-Run the tests using npx playwright test
-View the test report using npx playwright show report
+How to run
+Install dependencies  
+npm install
+
+Run all tests  
+npx playwright test
+
+Run specific file  
+npx playwright test tests/login.spec.js
+
+View report  
+npx playwright show-report
