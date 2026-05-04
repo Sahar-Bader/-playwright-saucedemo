@@ -14,11 +14,11 @@ export class CheckoutStepOnePage {
     return await this.pageTitle.innerText()
   }
 
-  async fillCustomerFields(firstName = '', lastName = '', postalCode = '') {
-    await this.firstNameInput.fill(firstName)
-    await this.lastNameInput.fill(lastName)
-    await this.postalCodeInput.fill(postalCode)
-  }
+async fillCustomerFields(firstName, lastName, postalCode) {
+  await this.firstNameInput.fill(firstName)
+  await this.lastNameInput.fill(lastName)
+  await this.postalCodeInput.fill(postalCode)
+}
 
   async clickContinue() {
     await this.continueButton.click()

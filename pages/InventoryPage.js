@@ -6,6 +6,7 @@ export class InventoryPage {
     this.priceLabel = page.locator('[data-test="inventory-item-price"]')
     this.cartBadge = page.locator('.shopping_cart_badge')
     this.cartLink = page.locator('.shopping_cart_link')
+    this.addButtons = page.locator('[data-test^="add-to-cart"]')
   }
 
   async getTitle() {
@@ -17,8 +18,7 @@ export class InventoryPage {
   }
 
   async addItemByIndex(index) {
-    const addButtons = this.page.locator('[data-test^="add-to-cart"]')
-    await addButtons.nth(index).click()
+    await this.addButtons.nth(index).click()
   }
 
   async goToCart() {

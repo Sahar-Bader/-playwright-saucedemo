@@ -22,7 +22,6 @@ test.describe('SauceDemo Sanity Suite', () => {
     checkoutStepOne = new CheckoutStepOnePage(page)
     checkoutStepTwo = new CheckoutStepTwoPage(page)
     checkoutComplete = new CheckoutCompletePage(page)
-
     await page.goto(URL.base)
   })
 
